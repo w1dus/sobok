@@ -80,7 +80,7 @@ const Auth = () => {
         <div className={styles.login_box}>
 
             <form onSubmit={onSubmit}>
-                <img src="../images/sobok_logo.svg" alt="sobok logo" className={styles.login_logo}/>
+                <img src={`${process.env.PUBLIC_URL}/images/sobok_logo.svg`} alt="sobok logo" className={styles.login_logo}/>
 
                 <input 
                     name="email" 
