@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/sobok/static/css/main.9b2e090e.css",
-    "main.js": "/sobok/static/js/main.d5af598c.js",
+    "main.css": "/sobok/static/css/main.e4f6fc77.css",
+    "main.js": "/sobok/static/js/main.1c079630.js",
     "static/media/stamp_complete.svg": "/sobok/static/media/stamp_complete.e59da9ed9a580d7eaaac.svg",
     "static/media/stamp_on.svg": "/sobok/static/media/stamp_on.72afa0556745c51b4ab0.svg",
     "static/media/stamp_empty.svg": "/sobok/static/media/stamp_empty.c9da960eb17061f66f0c.svg",
@@ -16,11 +16,11 @@
     "static/media/nav_bukit.svg": "/sobok/static/media/nav_bukit.1aedd3295a3ebab8d7be.svg",
     "static/media/radio_icon.svg": "/sobok/static/media/radio_icon.d4cc2b025ae7588e28c3.svg",
     "static/media/check_icon.svg": "/sobok/static/media/check_icon.1bc639133d93017833bf.svg",
-    "main.9b2e090e.css.map": "/sobok/static/css/main.9b2e090e.css.map",
-    "main.d5af598c.js.map": "/sobok/static/js/main.d5af598c.js.map"
+    "main.e4f6fc77.css.map": "/sobok/static/css/main.e4f6fc77.css.map",
+    "main.1c079630.js.map": "/sobok/static/js/main.1c079630.js.map"
   },
   "entrypoints": [
-    "static/css/main.9b2e090e.css",
-    "static/js/main.d5af598c.js"
+    "static/css/main.e4f6fc77.css",
+    "static/js/main.1c079630.js"
   ]
 }
