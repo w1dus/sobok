@@ -45,7 +45,7 @@ function StampAccumulate({userObj}){
                     :
                     <p className={styles.help}>[my]➡️[회원정보수정]에서 연락처를 등록해주세요.</p>
                 }
-                <p className={styles.help}> {userObj.email}   카페 직원분에게 해당 아이디를 보여주세요.z</p>
+                <p className={styles.help}> {userObj.email}   카페 직원분에게 해당 아이디를 보여주세요.</p>
 
                 <div className={styles.btnWrap}>
                     <button className={styles.okBtn} onClick={() => {navigate(-1)}}>확인</button>

@@ -7,10 +7,17 @@ import axios from 'axios';
 function Stamp_add(){
     let userId = document.getElementById('userId');
     let store = document.getElementById('store');
-    axios.get(`https://sobok.gabia.io/api/create?userId=${userId.value}&store=${store.value}`).then((Response)=>{
+    axios.post('https://sobok.gabia.io/api/create', 
+            {
+                userId : userId.value,
+                store : store.value
+
+            }
+    ).then((Response)=>{
         console.log(Response);
         alert('등록되었습니다.');
-    }).catch((Error)=>{
+    })
+    .catch((Error)=>{
         console.log(Error)
     });
 }
@@ -32,11 +39,6 @@ function StampIssued(){
                 <div className={styles.iptWrap}>
                     <input id="store" type="text" placeholder="매장" className={styles.iptWrap}/>
                 </div>
-                {/* <label className={styles.label}>스탬프 갯수<b>*</b></label>
-                <div className={styles.iptWrap}>
-                    <input type="text" placeholder="1개 이상 입력" className={styles.iptWrap}/>
-                </div> */}
-
                 <div className={styles.btnWrap}>
                     <button onClick={Stamp_add} className={styles.okBtn}>적립하기</button>
                 </div>
