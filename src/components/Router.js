@@ -1,6 +1,7 @@
 
 import { BrowserRouter, Routes, Route, useLocation} from "react-router-dom";
-import { useLocation } from 'react-router-dom';//route page
+
+//route page
 import Auth from "routes/Auth";
 import CheckCoupon from "routes/CheckCoupon";
 import Detail from "routes/Detail";
@@ -17,9 +18,7 @@ import Shipping from "routes/Shipping";
 import SignUp from "routes/SignUp";
 import SignupComplete from "routes/SignupComplete";
 import Stamp from "routes/Stamp";
-import StampAccumulate from "routes/StampAccumulate";
 import StampApplication from "routes/StampApplication";
-import StampIssued from "routes/StampIssued";
 import StampList from "routes/StampList";
 import StampModify from "routes/StampModify";
 import StampView from "routes/StampView";
@@ -31,11 +30,17 @@ import Event from "routes/Event";
 import ItemRegist from "routes/ItemRegist";
 import NewsWrite from "routes/NewsWrite";
 import EventRegist from "routes/EventRegist";
+
+
+import StampIssued from "routes/StampIssued";
+import StampAccumulate from "routes/StampAccumulate";
+import Apply from "routes/Apply";
+import Apply_admin from "routes/Apply_admin";
 import { useEffect } from "react";
 
 const ScrollToTop = () => {
     const {pathname} = useLocation(); 
-
+    
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [pathname])
@@ -64,14 +69,12 @@ const AppRouter = ({isLoggedIn, userObj, refreshUser}) => {
                 <Route exact path="/member_withdrawal_complete" element={<MemberWithdrawalComplete />} />
                 
                 <Route exact path="/stamp" element={<Stamp userObj={userObj}/>}   />
-                <Route exact path="/stamp_accumulate" element={<StampAccumulate userObj={userObj}/>} />
-                <Route exact path="/stamp_issue" element={<StampIssued/>} />
                 <Route exact path="/stamp_application" element={<StampApplication/>} />
                 <Route exact path="/stamp_modify" element={<StampModify />} />
                 <Route exact path="/stamp_list" element={<StampList/>} />
                 <Route exact path="/stamp_view" element={<StampView/>} />
                 <Route exact path="/check_cupon" element={<CheckCoupon/>} />
-                <Route exact path="/shipping" element={<Shipping/>} />
+                <Route exact path="/shipping" element={<Shipping userObj={userObj}/>} />
 
                 <Route exact path="/review_write/:id" element={<ReviewWrite userObj={userObj}/>} />
 
@@ -87,6 +90,11 @@ const AppRouter = ({isLoggedIn, userObj, refreshUser}) => {
                 <Route exact path="/event_regist" element={<EventRegist/>} />
 
                 <Route exact path="/item_regist" element={<ItemRegist />}></Route>
+
+                <Route exact path="/stamp_issue" element={<StampIssued userObj={userObj}/>} />
+                <Route exact path="/stamp_accumulate" element={<StampAccumulate userObj={userObj}/>} />
+                <Route exact path="/apply_admin" element={<Apply_admin userObj={userObj} />}></Route>
+                <Route exact path="/apply" element={<Apply userObj={userObj} />}></Route>
 
 
                 {

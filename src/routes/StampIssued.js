@@ -22,7 +22,9 @@ function Stamp_add(){
     });
 }
 
-function StampIssued(){
+function StampIssued(userObj){
+    userObj=userObj.userObj;
+    console.log(userObj);
     return (
         <>
            <Header title="스템프 적립요청"/>
@@ -34,10 +36,11 @@ function StampIssued(){
                 <label className={styles.label}>아이디<b>*</b></label>
                 <div className={styles.iptWrap}>
                     <input id="userId"type="text" placeholder="아이디" className={styles.iptWrap}/>
+                    <input id="store" type="hidden" value={userObj.displayName}/>
                 </div>
                 <label className={styles.label}>매장<b>*</b></label>
                 <div className={styles.iptWrap}>
-                    <input id="store" type="text" placeholder="매장" className={styles.iptWrap}/>
+                {userObj.displayName}
                 </div>
                 <div className={styles.btnWrap}>
                     <button onClick={Stamp_add} className={styles.okBtn}>적립하기</button>
