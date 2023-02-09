@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/sobok/static/css/main.b374e4a4.css",
-    "main.js": "/sobok/static/js/main.9d8835ec.js",
+    "main.js": "/sobok/static/js/main.3e214e00.js",
     "static/media/stamp_complete.svg": "/sobok/static/media/stamp_complete.e59da9ed9a580d7eaaac.svg",
     "static/media/stamp_on.svg": "/sobok/static/media/stamp_on.72afa0556745c51b4ab0.svg",
     "static/media/stamp_empty.svg": "/sobok/static/media/stamp_empty.c9da960eb17061f66f0c.svg",
@@ -22,10 +22,10 @@
     "static/media/radio_icon.svg": "/sobok/static/media/radio_icon.d4cc2b025ae7588e28c3.svg",
     "static/media/check_icon.svg": "/sobok/static/media/check_icon.1bc639133d93017833bf.svg",
     "main.b374e4a4.css.map": "/sobok/static/css/main.b374e4a4.css.map",
-    "main.9d8835ec.js.map": "/sobok/static/js/main.9d8835ec.js.map"
+    "main.3e214e00.js.map": "/sobok/static/js/main.3e214e00.js.map"
   },
   "entrypoints": [
     "static/css/main.b374e4a4.css",
-    "static/js/main.9d8835ec.js"
+    "static/js/main.3e214e00.js"
   ]
 }
