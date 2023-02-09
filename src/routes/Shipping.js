@@ -2,9 +2,9 @@ import Header from 'components/Header';
 import Navigation from 'components/Navigation';
 import React from 'react'; 
 import styles from"./Shipping.module.css";
-
-
+import { useLocation } from 'react-router-dom';
 function Shipping(){
+    console.log(useLocation().state.arrStampId);
     return (
         <>
            <Header title="마이페이지"/>
