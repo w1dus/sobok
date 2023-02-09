@@ -66,14 +66,15 @@ function Apply (userObj) {
             stamp : stamp,
         }
         ).then((Response)=>{
-            alert('상태가 변경되었습니다.');
-            //update
             axios.get(`https://sobok.gabia.io/api/read_apply_admin`).then((Response)=>{
                 setData(Response.data.results);
-                console.log('z');
             }).catch((Error)=>{
                 console.log(Error)
             });
+            alert('상태가 변경되었습니다.');
+            window.location.reload();
+            //update
+            
         })
         .catch((Error)=>{
         console.log(Error)
