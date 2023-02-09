@@ -1,94 +1,73 @@
 import Header from 'components/Header';
 import Navigation from 'components/Navigation';
-import React from 'react'; 
+import React, { useState } from 'react'; 
 import { Link } from 'react-router-dom';
 import styles from"./Stamp.module.css";
+import axios from 'axios';
+import  { useEffect } from 'react';
 
-function Stamp(){
+
+
+function Li(data){
+    let arr = [];
+    let arrStampId = [];
+    for (let i = 0; i < data.length; i++) {
+        if(i>8){continue;}
+        arrStampId.push(data[i].stampId);
+        arr.push(
+        <li className={styles.on}>
+            <div className={styles.itemBox}>
+                <div className={styles.itemIcon}></div>
+                <p className={styles.title}>{data[i].store}</p>
+                <p className={styles.date}>{data[i].time}</p>
+            </div>
+        </li>
+        )
+      }
+
+      return (
+        <>
+        <ul className={styles.stampList}>
+            {arr}
+        </ul>
+        {data.length>=9 ? 
+        <div className={styles.btnWrap}>
+            <Link to="/check_cupon" state={{ arrStampId: arrStampId }}>
+                <button className={styles.okBtn}>쿠폰 확인하기</button>
+            </Link>
+        </div>
+        :""}
+        </>
+      );
+}
+
+function Stamp(userObj){
+    const [status, setStatus] = useState("경희대학교");
+    userObj=userObj.userObj;
+    console.log(userObj.email);
+
+    //data
+    const [data, setData] = useState(false);
+    useEffect(() => {
+        axios.get(`https://sobok.gabia.io/api/read?userId=${userObj.email}`).then((Response)=>{
+            setData(Response.data.results);
+        }).catch((Error)=>{
+            console.log(Error)
+        });
+      },[]);
     return (
         <>
            <Header title="스템프 적립"/>
            <div className={styles.stampContainer}>
                 <div className={styles.storeTitle}>
-                    <div class={styles.logo} style={{backgroundColor:'pink'}}></div> {/* 로고는 있을 시에만 background-image로 등록 */}
-                    경희대학교 카페 투어 스탬프 
+                    {(status === "경희대학교") ? <div className={styles.logo}  style={{backgroundImage: `url(${process.env.PUBLIC_URL}/images//khu_logo.png)`}} ></div>  : null }
+                    {status} 카페 투어 스탬프 
                 </div>
                 <ul className={styles.cafeList}>
-                    <li className={styles.on}>경희대학교</li>
-                    <li>이문시장</li>
-                    <li>동대문구</li>
+                    <li className={(status === "경희대학교") ? styles.on : null} onClick={() => setStatus("경희대학교")}>경희대학교</li>
+                    {/* <li>동대문구</li> */}
                 </ul>
-
-                <ul className={styles.stampList}>
-                    <li className={styles.on}>
-                        <div className={styles.itemBox}>
-                            <div className={styles.itemIcon}></div>
-                            <p className={styles.title}>카페A</p>
-                            <p className={styles.date}>2022. 01. 01<br/>12:00</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div className={styles.itemBox}>
-                            <div className={styles.itemIcon}></div>
-                            <p className={styles.title}>카페A</p>
-                            <p className={styles.date}>2022. 01. 01<br/>12:00</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div className={styles.itemBox}>
-                            <div className={styles.itemIcon}></div>
-                            <p className={styles.title}>카페A</p>
-                            <p className={styles.date}>2022. 01. 01<br/>12:00</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div className={styles.itemBox}>
-                            <div className={styles.itemIcon}></div>
-                            <p className={styles.title}>카페A</p>
-                            <p className={styles.date}>2022. 01. 01<br/>12:00</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div className={styles.itemBox}>
-                            <div className={styles.itemIcon}></div>
-                            <p className={styles.title}>카페A</p>
-                            <p className={styles.date}>2022. 01. 01<br/>12:00</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div className={styles.itemBox}>
-                            <div className={styles.itemIcon}></div>
-                            <p className={styles.title}>카페A</p>
-                            <p className={styles.date}>2022. 01. 01<br/>12:00</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div className={styles.itemBox}>
-                            <div className={styles.itemIcon}></div>
-                            <p className={styles.title}>카페A</p>
-                            <p className={styles.date}>2022. 01. 01<br/>12:00</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div className={styles.itemBox}>
-                            <div className={styles.itemIcon}></div>
-                            <p className={styles.title}>카페A</p>
-                            <p className={styles.date}>2022. 01. 01<br/>12:00</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div className={`${styles.itemBox} ${styles.complete}`}>
-                            <div className={styles.itemIcon}></div>
-                            <p className={styles.title}>상품 받기</p>
-                        </div>
-                    </li>
-                </ul>
-
-                <div className={styles.btnWrap}>
-                    <Link to="/check_cupon">
-                        <button className={styles.okBtn}>쿠폰 확인하기</button>
-                    </Link>
-                </div>
+                {Li(data)}
                 
            </div>
            <Navigation />
