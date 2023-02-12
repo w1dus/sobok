@@ -72,7 +72,6 @@ function Apply (userObj) {
                 console.log(Error)
             });
             alert('상태가 변경되었습니다.');
-            window.location.reload();
             window.location.href = '/stamp_issue';
             //update
             
