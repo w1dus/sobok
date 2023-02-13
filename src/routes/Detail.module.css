@@ -1,0 +1,130 @@
+
+.detailContainer{ max-width: 1200px; margin: 0 auto; position: relative; padding-bottom: 68.33px; }
+
+/* header */
+.header{ position: absolute; left: 0; top: 0; width: 100%; display: flex; justify-content: space-between; z-index: 9; }
+.header > .backBtn{ padding: 5px 15px; background-color: unset; border: unset; }
+.header > .zzimBtn{ padding: 5px 15px; background-color: unset; border: unset; }
+.header > .zzimBtn img{ width: 18px; height: 39px; }
+.header > .zzimBtn .active{ display: none; }
+
+
+/* slide */ 
+.imgSlide{ background-color: #dfdfdf; height: 500px;  }
+.imgSlide .mySwiper{ height: 100%; }
+
+.slide{ background-size: cover; background-repeat: no-repeat; background-position: center; }
+
+@media screen and (max-width: 1250px) { 
+    .imgSlide{ height: 50vw;  }
+}
+@media screen and (max-width: 650px) { 
+    .imgSlide{ height: 60vw;  }
+}
+
+/* infoContainer */
+.infoContainer{ padding: 20px 10px; }
+.infoContainer .title{ text-align: center; font-size: 17px; }
+.infoContainer .title .modifyBtn{ padding: 5px; background-color: unset; border: none; }
+.infoContainer .produce{ color: #5D5D5D; text-align: center; }
+
+.menu{ display: flex; border-top: 1px solid #F0F0F0; }
+.menu > li{ 
+    padding: 15px 10px; width: 50%; text-align: center; font-size: 16px; 
+    border-left: 1px solid #F0F0F0;
+}
+.menu > li:first-child{ border-left: none; }
+.menu > li span{ display: block; height: 100%; cursor: pointer; }
+/* menuContainer */
+.menuContainer{ display: flex; border-top: 1px solid #F0F0F0; border-bottom: 1px solid #F0F0F0;  }
+.menuContainer > li { width: calc(100% / 4); text-align: center; padding:0 5px; position: relative; }
+.menuContainer > li .title{ position: relative; padding: 10px 0; display: block; height: 100%; font-size: 15px; cursor: pointer; }
+.menuContainer > li.active .title::after{ content:''; position:absolute; display: block; width: 100%; height: 5px; background-color: #5D5D5D; left: 0; bottom: 0;}
+.menuContainer > li .newIcon{ 
+    position: absolute; left: calc(50% - (35px / 2)); top: -12px; background-color: #FF9F74; color: #fff; 
+    padding: 2px 5px; font-size: 12px; border-radius: 13px; width: 35px;
+}
+
+
+/* dataContainer */
+/* menu01_cotain : 정보*/
+.menu01_cotain .dataContainer{ padding: 10px; }
+.menu01_cotain .dataContainer .data{ padding: 5px 0; font-size: 15px; }
+
+.menu01_cotain .modifyBtn{ 
+    padding: 10px; border: 1px solid #F0F0F0; border-left: unset; border-right: unset; 
+    font-size: 16px; 
+}
+.menu01_cotain .infoList{ padding: 20px 0; display: flex; flex-wrap: wrap; justify-content: flex-start; }
+.menu01_cotain .infoList > li {  padding: 10px; width: calc(100% / 14); }  
+.menu01_cotain .infoList > li .icon{ width: 100%; }
+.menu01_cotain .infoList > li .title{ text-align: center; padding:5px 0; }
+
+@media screen and (max-width: 1250px) { 
+    .menu01_cotain .infoList > li {  width: calc(100% / 12); }  
+}
+@media screen and (max-width: 1000px) { 
+    .menu01_cotain .infoList > li {  width: calc(100% / 10); }  
+}
+
+@media screen and (max-width: 800px) {
+    .menu01_cotain .infoList > li {  width: calc(100% / 8); } 
+}
+@media screen and (max-width: 700px) {
+    .menu01_cotain .infoList > li {  width: calc(100% / 7); } 
+}
+@media screen and (max-width: 600px) {
+    .menu01_cotain .infoList{ padding: 20px 5px; }
+    .menu01_cotain .infoList > li {  width: calc(100% / 6); padding: 5px; }  
+    .menu01_cotain .infoList > li .title{ font-size: 14px; }
+}
+@media screen and (max-width: 500px) {
+    .menu01_cotain .infoList > li {  width: calc(100% / 5);  } 
+}
+@media screen and (max-width: 300px) {
+    .menu01_cotain .infoList > li {  width: calc(100% / 4); } 
+}
+
+
+/* 이벤트 */
+.eventContainer{ max-width: 1200px; margin: 0 auto; overflow: hidden; padding: 10px; padding-bottom: 50px;  }
+
+.eventList > li{ padding: 10px 0 20px 0; border-bottom: 1px solid #dfdfdf;   }
+.eventList > li .item .titleWrap{ display: flex; align-items: center; margin-top: 5px; }
+.eventList > li .item .titleWrap .imgBox{ width: 30px; height: 30px; background-color: #dfdfdf; border-radius: 50%; margin-right: 5px; flex-shrink: 0; }
+
+.eventList > li .item .titleWrap .info{ width: calc(100% - 35px); }
+.eventList > li .item .titleWrap .info .name{ display: block; font-weight: 600; overflow: hidden; text-overflow: ellipsis;  white-space: nowrap; } 
+.eventList > li .item .titleWrap .info .category{ display: block; font-size: 13px; } 
+
+.eventList > li .item .date{ font-size: 13px; text-align: right; color: #7f7f7f; }
+
+.eventList > li .item .imgBox{ margin: 10px 0; height: 400px; background-color: #dfdfdf; border-radius: 5px; background-size: cover; background-repeat: no-repeat; background-position: center; background-repeat: no-repeat; }
+
+.eventList > li .item .contentBox{ 
+    margin-top: 10px; border: 1px solid #dfdfdf; padding: 10px; border-radius: 4px; 
+}
+.eventList > li .item .contentBox .title{ font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.eventList > li .item .contentBox .content{ white-space: normal;  word-wrap: keep-all; display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical; overflow: hidden; font-size: 14px; margin-top: 5px; }
+
+@media screen and (max-width: 1250px) { 
+    .eventList > li .item .imgBox{ height: 35vw; }
+}
+@media screen and (max-width: 650px) { 
+    .eventList > li .item .imgBox{ height: 40vw; }
+}
+
+
+
+.menu03_contain{ padding:10px;  }
+.menu03_contain img{ display: block; margin:0 auto; width: 100%; max-width: 100%; }
+
+.eventContainer .btnWrap{ display: flex; justify-content: flex-end; margin: 10px 0; }
+.eventContainer .btnWrap .reviewBtn{ background-color: unset; border: unset; display: flex; align-items: center; }
+.eventContainer .btnWrap .reviewBtn img{ margin-right: 5px; }
+
+.emptyBox{ text-align: center; border:1px solid #dfdfdf; background-color: #efefef; padding: 10px; font-size: 14px; }
+
+.modifyBox{ margin-top: 10px; display: flex; align-items: center; justify-content: right;}
+.modifyBox button { border: 1px solid #dfdfdf; padding: 5px; min-width: 80px; font-size: 14px; }
+.modifyBox button + button{ margin-left: 10px; }

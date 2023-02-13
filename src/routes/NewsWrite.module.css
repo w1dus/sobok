@@ -1,0 +1,40 @@
+.content_top{ margin-top: 56px; }
+
+.title{ padding: 13px 10px; font-size: 16px; background-color: #EAEAEA; font-weight: 600; }
+
+.ipt_wrap{ padding: 0 10px; border-bottom: 1px solid #E5E5E5; }
+.ipt_wrap .label{ padding: 13px 0px; font-weight: 600; }
+.ipt_wrap .label b{ color: #FF9F74; font-weight: 400; }
+.ipt_wrap .ipt{ margin: 0 0 13px 0; padding: 10px; font-size: 16px; width: 100%; resize: none; border: 1px solid #dfdfdf;  }
+
+.radio_wrap{ display: flex; gap: 1em; margin-bottom: 13px; }
+.radio_wrap > li{ width: 50%;  }
+.radio_wrap > li > input[type="radio"]{ display: none; }
+.radio_wrap > li > label{ 
+    background-color: #EEEEEF; display: block; width: 100%; text-align: center; 
+    font-size: 16px; padding: 13px; border-radius: 4px; cursor: pointer;
+}
+.radio_wrap > li > input[type="radio"]:checked + label{ background-color: #FF9F74; color: #fff; }
+
+
+.btn_container{ display: flex; gap: 1em; margin: 40px 0; }
+.btn_container > li { width: 50%; }
+.btn_container .cancelBtn{ 
+    display: block; width: 100%; padding: 13px; border: none; 
+    background-color: #EEEEEF; font-size: 16px; border-radius: 4px;
+}
+.btn_container .submitBtn{ 
+    display: block; width: 100%; padding: 13px; border: none; 
+    background-color: #FF9F74; color: #fff;  font-size: 16px; border-radius: 4px;
+}
+
+.important{ font-size: 14px; color: #7f7f7f; font-weight: 400; }
+.file{ padding: 15px; width: 100%; border: 1px solid #E8E8E8; border-radius: 5px; padding-left: 46px; background-image: url('/public/images/file_icon.svg'); background-repeat: no-repeat; background-size: auto 35%; background-position: left 15px center; margin-bottom: 15px; }
+
+.checkContainer{ border: 1px solid #e8e8e8; padding: 10px; display: flex; flex-wrap: wrap; margin-bottom: 10px; }
+
+.checkContainer .checkWrap{ display: flex; padding-right: 20px; padding-bottom: 5px;  }
+.checkContainer .checkWrap input[type=checkbox]{ display: none; }
+.checkContainer .checkWrap input[type=checkbox] + label{ display: flex; align-items: center; cursor: pointer; }
+.checkContainer .checkWrap input[type=checkbox] + label::before{ content:''; display: inline-block; width: 15px; height: 15px; border: 1px solid #E4E4E4; margin-right: 5px;  }
+.checkContainer .checkWrap input[type=checkbox]:checked + label::before{ background-image: url('/public/images/radio_icon.svg'); background-size: 70%; background-repeat: no-repeat; background-position: center;  }
